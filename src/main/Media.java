@@ -1,13 +1,13 @@
 package src.main;
 
-public class AudioMedia {
+public class Media {
     private String title;
     private int year;
     private int duration;
     private String text; /* Peut être sous-titres ou lyrics */
     private Artist protagonist; /*either host or singer */
 
-    public AudioMedia(String title, int year, int duration, String text, Artist protagonist) {
+    public Media(String title, int year, int duration, String text, Artist protagonist) {
         this.title = title;
         this.year = year;
         this.duration = duration;

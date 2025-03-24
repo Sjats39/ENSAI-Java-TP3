@@ -1,6 +1,6 @@
 package src.main;
 
-public class Podcast extends AudioMedia{
+public class Podcast extends Media{
     private Artist host;
     private String topic;
     private String subtitles;

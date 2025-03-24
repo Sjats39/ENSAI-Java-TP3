@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Represents a song with essential attributes.
  */
-public class Song extends AudioMedia{
+public class Song extends Media{
     private Artist singer;
     private Artist author;
     private String lyrics; /* see if usefull afterwards */
