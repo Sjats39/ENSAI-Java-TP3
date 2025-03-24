@@ -45,5 +45,17 @@ public class Playlist {
         }
     } 
 
+    public Playlist copy(){
     
+        String nameCopy = new String(name);
+
+        List<Media> mediaListCopy = new ArrayList<Media>();
+        Collections.copy(mediaListCopy, mediaList);
+
+        Integer copyTotalDuration = Integer.valueOf(totalDuration);
+
+        return new Playlist(nameCopy, mediaListCopy, copyTotalDuration);
+
+
+    }   
 }

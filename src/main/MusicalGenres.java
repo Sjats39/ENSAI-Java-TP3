@@ -15,10 +15,10 @@ public class MusicalGenres {
         genres.add("Pop");
         genres.add("Rock");
         genres.add("Electro");
-        genres.add("Jazz");
+        genres.add("Rap");
         genres.add("Classical");
         genres.add("Hip-Hop");
-        genres.add("Country");
+        genres.add("Macarrisme");
         genres.add("Folk");
         genres.add("Indie");
         genres.add("Traditional");
