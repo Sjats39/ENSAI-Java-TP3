@@ -1,5 +1,8 @@
 package src.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -34,8 +37,11 @@ public class Main {
         Artist singer = new Artist("Orfeó", "català", "Catalan");
         Artist author = new Artist("Emili", "Guanyavents", "Catalan");
         Artist composer = new Artist("Francesc", "Alió", "Catalan");
-        
-        Song song = new Song("Els Segadors", singer, 1892, 104, lyrics, author, composer);
+        List<String> genres = new ArrayList<>();
+
+        genres.add(new MusicalGenres().getGenres(9)); /*Associe le 10 genre a la chanson */
+
+        Song song = new Song("Els Segadors", singer, 1892, 104, lyrics, author, composer, genres);
         
         System.out.println(song);
         

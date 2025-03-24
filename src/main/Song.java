@@ -1,5 +1,6 @@
 package src.main;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -10,6 +11,7 @@ public class Song extends AudioMedia{
     private Artist author;
     private String lyrics; /* see if usefull afterwards */
     private Artist composer;
+    private List<String> genres; 
 
     /**
      * Constructs a new Song object.
@@ -19,12 +21,13 @@ public class Song extends AudioMedia{
      * @param author   The author of the song.
      * @param composer The composer of the song.
      */
-    public Song(String title, Artist singer, int year, int duration, String lyrics, Artist author, Artist composer) {
+    public Song(String title, Artist singer, int year, int duration, String lyrics, Artist author, Artist composer, List<String> genres) {
         super(title, year, duration, lyrics, singer);
         this.singer = singer;
         this.lyrics = lyrics;
         this.author = author;
         this.composer = composer;
+        this.genres = genres;
     }
 
     /**

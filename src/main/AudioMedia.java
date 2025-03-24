@@ -30,7 +30,7 @@ public class AudioMedia {
 
     @Override
     public String toString() {
-        return "Song " + this.title + " by " + this.protagonist;
+        return "Song " + this.title + " by " + this.protagonist.toString();
     }
 
     public Integer getYear(){

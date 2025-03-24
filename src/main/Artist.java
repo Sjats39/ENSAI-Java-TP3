@@ -10,4 +10,8 @@ public class Artist {
         this.lastName = lastName;
         this.nationality = nationality;
     }
+
+    public String toString(){
+        return firstName + " " + lastName; 
+    }
 }
