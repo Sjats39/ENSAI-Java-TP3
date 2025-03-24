@@ -41,4 +41,7 @@ public class Media {
         return this.title;
     }
 
+    public Integer getDuration(){
+        return this.duration;
+    }
 }

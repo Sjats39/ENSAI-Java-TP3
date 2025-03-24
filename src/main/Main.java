@@ -38,21 +38,50 @@ public class Main {
     }
     
     public static Podcast podcast1(){
-        
 
-        return Podcast();
+        Artist host = new Artist("Andreu", "Juanola", "Catalan");
+        String topic = "Football";
+        String subtitles = "Hola, hola! Benvinguts a La Sotana, un programa d'esports, \u00E9s a dir, de futbol, \u00E9s a dir, de Messi... perqu\u00E8, clar, tot gira al voltant de Messi, no? Som aqu\u00ED per parlar de tot el que passa al m\u00F3n del futbol, per\u00F2 si podem fer-ho amb m\u00E9s sarcasme que un comentarista esportiu de la tele, millor! Avui, com sempre, estem preparats per destrossar-ho tot, aix\u00ED que agafeu-vos b\u00E9 que arrenca l'an\u00E0lisi m\u00E9s profund i objectiu sobre el que ha passat a la jornada.";
+        String title = "La Sotana ";
+        Integer duration = 75;
+        Integer year = 2025;
+
+        return new Podcast(title, host, topic, duration, year, subtitles);
     }
     public static void main(String[] args) {
         
+        /* 3.1 */
         Song segadors = song1();
 
         System.out.println(segadors);
         
-        segadors.play();
+        /*segadors.play(); */
+
+
+        /* 3.5 */
 
         Song destraler = song2();
+        Podcast sotana = podcast1();
 
-        destraler.play();
+        List<Media> mediaList = new ArrayList<Media>();
+
+        mediaList.add(segadors);
+        mediaList.add(destraler);
+        mediaList.add(sotana);
+
+
+        Playlist p1 = new Playlist("Playlist 1", mediaList);
+
+        Playlist p2 = p1.copy();
+
+        p1.removeMedia(0);
+
+
+        System.out.println(p1.getDuration());
+        System.out.println(p2.getDuration());
+
+        p2.play(false);
+        
 
 
     }

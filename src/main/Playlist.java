@@ -9,9 +9,15 @@ public class Playlist {
     private List<Media> mediaList;
     private Integer totalDuration; 
     
-    public Playlist(String name, List<Media> mediaList, Integer totalDuration){
+    public Playlist(String name, List<Media> mediaList){
         this.name=name;
         this.mediaList = mediaList;
+        Integer totalDuration = 0;
+
+        for(Media media : mediaList){
+            totalDuration += media.getDuration();
+        }
+
         this.totalDuration = totalDuration;
     }
 
@@ -45,17 +51,18 @@ public class Playlist {
         }
     } 
 
-    public Playlist copy(){
-    
+    public Playlist copy() {
+        // Create a new name copy
         String nameCopy = new String(name);
+    
+        // Create a new media list by copying the existing media list
+        List<Media> mediaListCopy = new ArrayList<>(mediaList);  // This automatically copies all elements
+    
+        return new Playlist(nameCopy, mediaListCopy);
+    }
+    
 
-        List<Media> mediaListCopy = new ArrayList<Media>();
-        Collections.copy(mediaListCopy, mediaList);
-
-        Integer copyTotalDuration = Integer.valueOf(totalDuration);
-
-        return new Playlist(nameCopy, mediaListCopy, copyTotalDuration);
-
-
-    }   
+    public Integer getDuration(){
+        return this.totalDuration;
+    }
 }
