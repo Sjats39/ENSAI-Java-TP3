@@ -1,4 +1,4 @@
-package src.main;
+package fr.ensai.mediaplayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +55,7 @@ public class Main {
 
         System.out.println(segadors);
         
-        /*segadors.play(); */
+        segadors.play();
 
 
         /* 3.5 */
@@ -80,7 +80,7 @@ public class Main {
         System.out.println(p1.getDuration());
         System.out.println(p2.getDuration());
 
-        p2.play(false);
+        p2.play(true);
         
 
 

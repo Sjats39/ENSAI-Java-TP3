@@ -1,4 +1,4 @@
-package src.main;
+package fr.ensai.mediaplayer;
 
 import java.util.ArrayList;
 import java.util.List;

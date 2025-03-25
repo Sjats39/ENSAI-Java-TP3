@@ -1,4 +1,4 @@
-package src.main;
+package fr.ensai.mediaplayer;
 
 public class Media {
     private String title;
@@ -15,18 +15,20 @@ public class Media {
         this.protagonist = protagonist;
     }
 
-    public void play(){
-        String[] listeMots = text.split("\\s+");
-        for(String mot : listeMots ){
-            System.out.println(mot + " ");
+    public void play() {
+
+        String[] listeMots = text.split(" ");
+        for (String mot : listeMots) {
+            System.out.print(mot + " ");
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                System.err.println("Chanson interrompue.");
+                System.err.print("Chanson interrompue.");
             }
         }
     }
+    
 
     @Override
     public String toString() {

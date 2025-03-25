@@ -1,4 +1,4 @@
-package src.main;
+package fr.ensai.mediaplayer;
 
 public class Podcast extends Media{
     private Artist host;

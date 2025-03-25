@@ -1,4 +1,4 @@
-package src.main;
+package fr.ensai.mediaplayer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,41 +22,44 @@ public class Playlist {
     }
 
     public void addMedia(Media media){
+        this.totalDuration += media.getDuration();
         mediaList.add(media);
     }
 
     public void removeMedia(Media media){
         if(mediaList.contains(media)){
+            this.totalDuration -= media.getDuration();
             mediaList.remove(media);
         }
     }
 
     public void removeMedia(int index){
-        if(index < mediaList.size()){
-            mediaList.remove(index);
+        if(index >= 0 &&index < mediaList.size()){
+            this.totalDuration -= mediaList.remove(index).getDuration();
+            
         }
     }
 
-    public void play(boolean random){
+    public void play(boolean random) {
 
-        List<Media> mediaListCopy = new ArrayList<Media>();
-        Collections.copy(mediaListCopy, mediaList); /*Afin de pas perdre l'ordre pre établi, on copie la liste */
-
-        if(random){
+        List<Media> mediaListCopy = new ArrayList<>(mediaList);
+    
+        if (random) {
             Collections.shuffle(mediaListCopy);
         }
-
-        for(Media media: mediaListCopy){
+    
+        for (Media media : mediaListCopy) {
             media.play();
         }
-    } 
+    }
+    
+    
 
     public Playlist copy() {
-        // Create a new name copy
+
         String nameCopy = new String(name);
     
-        // Create a new media list by copying the existing media list
-        List<Media> mediaListCopy = new ArrayList<>(mediaList);  // This automatically copies all elements
+        List<Media> mediaListCopy = new ArrayList<>(mediaList);
     
         return new Playlist(nameCopy, mediaListCopy);
     }
@@ -64,5 +67,9 @@ public class Playlist {
 
     public Integer getDuration(){
         return this.totalDuration;
+    }
+
+    public Integer size(){
+        return this.mediaList.size();
     }
 }
